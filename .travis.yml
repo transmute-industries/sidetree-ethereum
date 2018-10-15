@@ -2,12 +2,17 @@ language: node_js
 node_js:
   - "8.11.4"
 
+sudo: required
+
 cache:
   directories:
     - "node_modules"
 
 before_install:
-  - npm i -g ganache-cli@6.1.0 solc
+  - sudo add-apt-repository ppa:ethereum/ethereum
+  - sudo apt-get update
+  - sudo apt-get install solc
+  - npm i -g ganache-cli@6.1.0
   - ganache-cli &>/dev/null &
   - sleep 6 # wait for ganache-cli
   - curl -X POST --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":0}' http://localhost:8545
