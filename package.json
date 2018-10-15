@@ -23,6 +23,7 @@
     "typescript": "^2.9.1"
   },
   "scripts": {
+    "clean": "rm -rf  ./coverage .nyc_output dist nunitresults.xml",
     "precommit": "npm run lint",
     "build": "tsc && copyfiles json/*.json dist",
     "test": "jasmine-ts --config=./tests/jasmine.json",
