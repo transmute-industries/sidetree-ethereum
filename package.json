@@ -1,0 +1,48 @@
+{
+  "name": "sidetree-ethereum",
+  "version": "0.1.0",
+  "description": "Node.js implementation of Sidetree-Ethereum.",
+  "repository": "https://github.com/decentralized-identity/sidetree-ethereum",
+  "license": "Apache-2.0",
+  "main": "dist/src/index.js",
+  "dependencies": {
+    "web3": "^1.0.0-beta.36"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^2.8.8",
+    "@types/web3": "^1.0.10",
+    "copyfiles": "^2.1.0",
+    "husky": "^0.14.3",
+    "jasmine": "^3.1.0",
+    "jasmine-reporters": "^2.3.2",
+    "jasmine-spec-reporter": "^4.2.1",
+    "jasmine-ts": "^0.2.1",
+    "nyc": "^13.0.1",
+    "tslint": "^5.10.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^2.9.1"
+  },
+  "scripts": {
+    "precommit": "npm run lint",
+    "build": "tsc && copyfiles json/*.json dist",
+    "test": "jasmine-ts --config=./tests/jasmine.json",
+    "cc": "npm run build && nyc jasmine --config=./tests/jasmine-cc.json",
+    "lint": "tslint --fix --project .",
+    "start": "node dist/src/index.js",
+    "postinstall": "rm -f node_modules/web3/index.d.ts"
+  },
+  "nyc": {
+    "all": true,
+    "extension": [
+      ".js"
+    ],
+    "include": [
+      "dist/src/**"
+    ],
+    "reporter": [
+      "text",
+      "cobertura",
+      "html"
+    ]
+  }
+}

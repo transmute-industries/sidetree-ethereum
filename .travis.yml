@@ -10,6 +10,12 @@ before_install:
   - npm i -g ganache-cli@6.1.0
   - ganache-cli &>/dev/null &
   - sleep 6 # wait for ganache-cli
+  - curl -X POST --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":0}' http://localhost:8545
+
+install:
+  - npm i
 
 script:
- - curl -X POST --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":0}' http://localhost:8545
+  - npm run lint
+  - npm run test
+  - nom run cc
