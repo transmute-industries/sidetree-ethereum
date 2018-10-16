@@ -1,0 +1,260 @@
+    /* "./contracts/DIDRooter.sol":27:332  contract DIDRooter {... */
+  mstore(0x40, 0x80)
+    /* "./contracts/DIDRooter.sol":80:173  constructor () public {... */
+  callvalue
+    /* "--CODEGEN--":8:17   */
+  dup1
+    /* "--CODEGEN--":5:7   */
+  iszero
+  tag_1
+  jumpi
+    /* "--CODEGEN--":30:31   */
+  0x0
+    /* "--CODEGEN--":27:28   */
+  dup1
+    /* "--CODEGEN--":20:32   */
+  revert
+    /* "--CODEGEN--":5:7   */
+tag_1:
+    /* "./contracts/DIDRooter.sol":80:173  constructor () public {... */
+  pop
+    /* "./contracts/DIDRooter.sol":120:130  msg.sender */
+  caller
+    /* "./contracts/DIDRooter.sol":112:117  owner */
+  0x0
+  dup1
+    /* "./contracts/DIDRooter.sol":112:130  owner = msg.sender */
+  0x100
+  exp
+  dup2
+  sload
+  dup2
+  0xffffffffffffffffffffffffffffffffffffffff
+  mul
+  not
+  and
+  swap1
+  dup4
+  0xffffffffffffffffffffffffffffffffffffffff
+  and
+  mul
+  or
+  swap1
+  sstore
+  pop
+    /* "./contracts/DIDRooter.sol":145:166  EmittedTag("created") */
+  0x1bc4d1a1b655909b5bf6411e0712a59abd87875beeb08a5255f17a374bd2f52b
+  mload(0x40)
+  dup1
+  dup1
+  0x6372656174656400000000000000000000000000000000000000000000000000
+  dup2
+  mstore
+  pop
+  0x20
+  add
+  swap1
+  pop
+  mload(0x40)
+  dup1
+  swap2
+  sub
+  swap1
+  log1
+    /* "./contracts/DIDRooter.sol":27:332  contract DIDRooter {... */
+  dataSize(sub_0)
+  dup1
+  dataOffset(sub_0)
+  0x0
+  codecopy
+  0x0
+  return
+stop
+
+sub_0: assembly {
+        /* "./contracts/DIDRooter.sol":27:332  contract DIDRooter {... */
+      mstore(0x40, 0x80)
+      jumpi(tag_1, lt(calldatasize, 0x4))
+      calldataload(0x0)
+      0x100000000000000000000000000000000000000000000000000000000
+      swap1
+      div
+      0xffffffff
+      and
+      dup1
+      0x33311ef3
+      eq
+      tag_2
+      jumpi
+      dup1
+      0x8da5cb5b
+      eq
+      tag_3
+      jumpi
+    tag_1:
+      0x0
+      dup1
+      revert
+        /* "./contracts/DIDRooter.sol":215:330  function emitBytes32(bytes32 tag) public returns (bytes32){... */
+    tag_2:
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_4
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x0
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_4:
+        /* "./contracts/DIDRooter.sol":215:330  function emitBytes32(bytes32 tag) public returns (bytes32){... */
+      pop
+      tag_5
+      0x4
+      dup1
+      calldatasize
+      sub
+      dup2
+      add
+      swap1
+      dup1
+      dup1
+      calldataload
+      not(0x0)
+      and
+      swap1
+      0x20
+      add
+      swap1
+      swap3
+      swap2
+      swap1
+      pop
+      pop
+      pop
+      jump(tag_6)
+    tag_5:
+      mload(0x40)
+      dup1
+      dup3
+      not(0x0)
+      and
+      not(0x0)
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+        /* "./contracts/DIDRooter.sol":53:73  address public owner */
+    tag_3:
+      callvalue
+        /* "--CODEGEN--":8:17   */
+      dup1
+        /* "--CODEGEN--":5:7   */
+      iszero
+      tag_7
+      jumpi
+        /* "--CODEGEN--":30:31   */
+      0x0
+        /* "--CODEGEN--":27:28   */
+      dup1
+        /* "--CODEGEN--":20:32   */
+      revert
+        /* "--CODEGEN--":5:7   */
+    tag_7:
+        /* "./contracts/DIDRooter.sol":53:73  address public owner */
+      pop
+      tag_8
+      jump(tag_9)
+    tag_8:
+      mload(0x40)
+      dup1
+      dup3
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      return
+        /* "./contracts/DIDRooter.sol":215:330  function emitBytes32(bytes32 tag) public returns (bytes32){... */
+    tag_6:
+        /* "./contracts/DIDRooter.sol":265:272  bytes32 */
+      0x0
+        /* "./contracts/DIDRooter.sol":288:303  EmittedTag(tag) */
+      0x1bc4d1a1b655909b5bf6411e0712a59abd87875beeb08a5255f17a374bd2f52b
+        /* "./contracts/DIDRooter.sol":299:302  tag */
+      dup3
+        /* "./contracts/DIDRooter.sol":288:303  EmittedTag(tag) */
+      mload(0x40)
+      dup1
+      dup3
+      not(0x0)
+      and
+      not(0x0)
+      and
+      dup2
+      mstore
+      0x20
+      add
+      swap2
+      pop
+      pop
+      mload(0x40)
+      dup1
+      swap2
+      sub
+      swap1
+      log1
+        /* "./contracts/DIDRooter.sol":320:323  tag */
+      dup2
+        /* "./contracts/DIDRooter.sol":313:323  return tag */
+      swap1
+      pop
+        /* "./contracts/DIDRooter.sol":215:330  function emitBytes32(bytes32 tag) public returns (bytes32){... */
+      swap2
+      swap1
+      pop
+      jump	// out
+        /* "./contracts/DIDRooter.sol":53:73  address public owner */
+    tag_9:
+      0x0
+      dup1
+      swap1
+      sload
+      swap1
+      0x100
+      exp
+      swap1
+      div
+      0xffffffffffffffffffffffffffffffffffffffff
+      and
+      dup2
+      jump	// out
+
+    auxdata: 0xa165627a7a72305820cc27d399e47f7fe4203b8b7d300825f4d6f0da4b6ce44db4c77ac643bf52b1160029
+}
