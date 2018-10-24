@@ -7,15 +7,19 @@ const path = require("path");
 // Connect to local Ethereum node
 const web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 
-const interface = JSON.parse(
-  fs.readFileSync(path.resolve(__dirname, "../src/contracts/DIDRooter.abi"))
+const abi = JSON.parse(
+  fs.readFileSync(
+    path.resolve(__dirname, "../src/contracts/DIDEthereumAnchor.abi")
+  )
 );
 
 const bytecode = fs
-  .readFileSync(path.resolve(__dirname, "../src/contracts/DIDRooter.bin"))
+  .readFileSync(
+    path.resolve(__dirname, "../src/contracts/DIDEthereumAnchor.bin")
+  )
   .toString();
 
-console.log(interface, bytecode);
+console.log(abi, bytecode);
 
 (async () => {
   const accounts = await web3.eth.getAccounts();
@@ -23,12 +27,12 @@ console.log(interface, bytecode);
   console.log(accounts);
 
   const ownerAddress = accounts[0];
-  const contractAbi = interface;
+  const contractAbi = abi;
   const contractCode = "0x" + bytecode;
 
-  const DIDRooterContract = new web3.eth.Contract(contractAbi);
+  const DIDEthereumAnchorContract = new web3.eth.Contract(contractAbi);
 
-  const didRooterContractIntance = await DIDRooterContract.deploy({
+  const anchorInstance = await DIDEthereumAnchorContract.deploy({
     data: contractCode
   }).send({
     from: ownerAddress,
@@ -36,17 +40,24 @@ console.log(interface, bytecode);
     gasPrice: "30000000000000"
   });
 
-  console.log(`Address: ${didRooterContractIntance.options.address}`);
+  console.log(`Address: ${anchorInstance.options.address}`);
 
-  const contractOwner = await didRooterContractIntance.methods.owner().call();
+  fs.writeFileSync(
+    path.resolve(__dirname, "../src/contracts/anchorContractConfig.json"),
+    JSON.stringify(
+      {
+        address: anchorInstance.options.address,
+        abi,
+        bytecode
+      },
+      null,
+      2
+    )
+  );
 
-  let txData = await didRooterContractIntance.methods
-    .emitBytes32("0x123")
-    .send({ from: accounts[0] });
+  // let txData = await anchorInstance.methods
+  //   .writeAnchorFileHash("0x123")
+  //   .send({ from: accounts[0] });
 
-  console.log(txData);
-
-  //   console.log(contractOwner, ownerAddress )
-  //   const owner = await didRooterContractIntance.owner();
-  //   console.log(owner)
+  // console.log(txData);
 })();

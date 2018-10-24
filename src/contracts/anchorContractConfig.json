@@ -1,0 +1,39 @@
+{
+  "address": "0x197267236a2118531b6a7Ed2e25e48AF8DcaaC73",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "anchorFileHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "writeAnchorFileHash",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "signature": "0xc844ab41"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "anchorFileHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "EmittedAnchorFileHash",
+      "type": "event",
+      "signature": "0x09d77ee535da00c6bb9e929dbfa4fab88e67b58c16c5b32cec3000793e65b07a"
+    }
+  ],
+  "bytecode": "608060405234801561001057600080fd5b50610103806100206000396000f300608060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063c844ab41146044575b600080fd5b348015604f57600080fd5b5060706004803603810190808035600019169060200190929190505050608e565b60405180826000191660001916815260200191505060405180910390f35b60007f09d77ee535da00c6bb9e929dbfa4fab88e67b58c16c5b32cec3000793e65b07a8260405180826000191660001916815260200191505060405180910390a18190509190505600a165627a7a7230582008aa47eae6f53d55ebdb8af129cfddc4b5a0dc1c548e53f4681d72a4379f086b0029"
+}

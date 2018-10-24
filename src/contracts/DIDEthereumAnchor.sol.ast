@@ -1,0 +1,47 @@
+PragmaDirective
+   Source: "pragma solidity ^0.4.19;"
+ContractDefinition "DIDEthereumAnchor"
+   Source: "contract DIDEthereumAnchor {\n    event EmittedAnchorFileHash(bytes32 anchorFileHash);\n    function writeAnchorFileHash(bytes32 anchorFileHash) public returns (bytes32){\n        emit EmittedAnchorFileHash(anchorFileHash);\n        return anchorFileHash;\n    }\n}"
+  EventDefinition "EmittedAnchorFileHash"
+     Source: "event EmittedAnchorFileHash(bytes32 anchorFileHash);"
+    ParameterList
+       Source: "(bytes32 anchorFileHash)"
+      VariableDeclaration "anchorFileHash"
+         Type: bytes32
+         Source: "bytes32 anchorFileHash"
+        ElementaryTypeName bytes32
+           Source: "bytes32"
+  FunctionDefinition "writeAnchorFileHash" - public
+     Source: "function writeAnchorFileHash(bytes32 anchorFileHash) public returns (bytes32){\n        emit EmittedAnchorFileHash(anchorFileHash);\n        return anchorFileHash;\n    }"
+    ParameterList
+       Source: "(bytes32 anchorFileHash)"
+      VariableDeclaration "anchorFileHash"
+         Type: bytes32
+         Source: "bytes32 anchorFileHash"
+        ElementaryTypeName bytes32
+           Source: "bytes32"
+    ParameterList
+       Source: "(bytes32)"
+      VariableDeclaration ""
+         Type: bytes32
+         Source: "bytes32"
+        ElementaryTypeName bytes32
+           Source: "bytes32"
+    Block
+       Source: "{\n        emit EmittedAnchorFileHash(anchorFileHash);\n        return anchorFileHash;\n    }"
+      EmitStatement
+         Source: "emit EmittedAnchorFileHash(anchorFileHash)"
+        FunctionCall
+           Type: tuple()
+           Source: "EmittedAnchorFileHash(anchorFileHash)"
+          Identifier EmittedAnchorFileHash
+             Type: function (bytes32)
+             Source: "EmittedAnchorFileHash"
+          Identifier anchorFileHash
+             Type: bytes32
+             Source: "anchorFileHash"
+      Return
+         Source: "return anchorFileHash"
+        Identifier anchorFileHash
+           Type: bytes32
+           Source: "anchorFileHash"

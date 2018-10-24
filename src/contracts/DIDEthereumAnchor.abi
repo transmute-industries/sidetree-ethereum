@@ -1,0 +1,1 @@
+[{"constant":false,"inputs":[{"name":"anchorFileHash","type":"bytes32"}],"name":"writeAnchorFileHash","outputs":[{"name":"","type":"bytes32"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"anonymous":false,"inputs":[{"indexed":false,"name":"anchorFileHash","type":"bytes32"}],"name":"EmittedAnchorFileHash","type":"event"}]

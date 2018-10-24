@@ -1,1 +1,1 @@
-solc -o ./src/contracts --abi --bin --ast --asm ./contracts/DIDRooter.sol --overwrite
+solc -o ./src/contracts --abi --bin --ast --asm ./contracts/DIDEthereumAnchor.sol --overwrite
